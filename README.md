@@ -2,6 +2,11 @@
 
 ESP32Timers is a library for managing timers on ESP32. It provides classes and functions to create, manage, and check timers.
 
+## Features
+
+- `millis()` wraparound handling
+- Saving the state to the disc
+
 ## Classes
 
 ### TimerSingle
