@@ -1,6 +1,6 @@
 {
     "name": "ESP32Timers",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "description": "A simple timer library that can save its state to a file on teardown. It is also protected against a wraparound of the millis() function.",
     "keywords": "timing, timer, millis, wraparound, save, state",
     "repository":
