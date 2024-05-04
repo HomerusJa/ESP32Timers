@@ -1,21 +1,21 @@
-# ESP32Timers
+# :hourglass: ESP32Timers
 
 [![PlatformIO Registry](https://badges.registry.platformio.org/packages/homerusja/library/ESP32Timers.svg)](https://registry.platformio.org/libraries/homerusja/ESP32Timers)
 
 ESP32Timers is a library for managing timers on ESP32. It provides classes and functions to create, manage, and check timers.
 
-## Features
+## :rocket: Features
 
 - `millis()` wraparound handling
 - Saving the state to the disc
 
-## Classes
+## :technologist: Classes
 
 ### TimerSingle
 
 The `TimerSingle` class represents a single timer. It provides methods to set the interval of the timer, check if the timer has reached its interval, and get the interval of the timer.
 
-**CAUTION:** It does not save the state of the timer. Use the Timers class for that purpose
+:warning: **CAUTION:** This class does not save the state of the timer. Use the Timers class for that purpose!
 
 - `TimerSingle(uint32_t interval)`: Constructs a new Timer Single object with the specified interval in milliseconds.
 - `bool isTime()`: Checks if the timer has reached its interval. Returns true if the timer has reached its interval, false otherwise.
@@ -31,16 +31,17 @@ The `Timers` class provides a collection of timers for managing intervals. It pr
 - `bool isTime(const String &name)`: Checks if it is time for the timer with the specified name to trigger. Returns true if it is time for the timer to trigger, false otherwise.
 - `void setInterval(const String &name, uint32_t interval)`: Sets the interval for the timer with the specified name.
 
-## Examples
+## :books: Examples
 
 We provide two examples:
 
 - `single.cpp`: This shows the use, when you want to use only one timer. As stated above, this does not provide the saving functionality!
 - `multiple.cpp`: This shows the use of the `Timers`-class, including saving.
 
-## Installation
+## :hammer_and_wrench: Installation
 
 ### Depend on it
+
 1. Open `platformio.ini`, a project configuration file located in the root of PlatformIO project.
 2. Add the following line to the lib_deps option of [env:] section:
 
@@ -53,9 +54,12 @@ We provide two examples:
 ### Include it
 
 ESP32Timers library provides the following header files that can be included in your project:
+
 - ESP32Timers.h
 - TimerSingle.h
 - Timers.h
+
+Note that it is recommended to include the ESP32Timers.h.
 
 ```cpp
 #include <ESP32Timers.h>
@@ -71,6 +75,6 @@ ESP32Timers library provides the following header files that can be included in 
    pio pkg install --library "homerusja/ESP32Timers@^1.0.0"
    ```
 
-## License
+## :scroll: License
 
 This project is licensed under the MIT License.
