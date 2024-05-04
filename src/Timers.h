@@ -53,6 +53,15 @@ public:
    */
   void setInterval(const String &name, uint32_t interval, bool create = false);
 
+  /**
+   * @brief Checks if a timer with the specified name exists.
+   * @param name The name of the timer.
+   * @return True if a timer with the specified name exists, false otherwise.
+   */
+  bool timerExists(const String &name) {
+    return _timers.find(name) != _timers.end();
+  }
+
 private:
   /**
    * @brief Loads the timers from the file system.
