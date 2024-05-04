@@ -30,8 +30,13 @@ bool Timers::isTime(const String &name) {
   return false;
 }
 
-void Timers::setInterval(const String &name, uint32_t interval) {
-  _timers[name]->setInterval(interval);
+void Timers::setInterval(const String &name, uint32_t interval, bool create) {
+  if (_timers.find(name) == _timers.end()) {
+    // Timer with the given name does not exist, so we create a new one
+    this->addTimer(name, interval);
+  } else {
+    _timers[name]->setInterval(interval);
+  }
   save();
 }
 

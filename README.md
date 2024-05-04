@@ -29,7 +29,7 @@ The `Timers` class provides a collection of timers for managing intervals. It pr
 - `Timers(fs::FS &fs, const char *filename)`: Constructs a Timers object. `fs` is the file system to use for loading and saving timers. `filename` is the name of the file to load and save timers.
 - `void addTimer(const String &name, uint32_t interval)`: Adds a timer with the specified name and interval in milliseconds.
 - `bool isTime(const String &name)`: Checks if it is time for the timer with the specified name to trigger. Returns true if it is time for the timer to trigger, false otherwise.
-- `void setInterval(const String &name, uint32_t interval)`: Sets the interval for the timer with the specified name.
+- `void setInterval(const String &name, uint32_t interval, bool create = false)`: Sets the interval for the timer with the specified name. If the create flag is true, it creates a new timer with that name if it cant find the old one.
 
 ## :books: Examples
 

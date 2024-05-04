@@ -48,8 +48,10 @@ public:
    * @brief Sets the interval for the timer with the specified name.
    * @param name The name of the timer.
    * @param interval The new interval in milliseconds.
+   * @param create If true, a new timer is created if there is no timer with
+   * the specified name.
    */
-  void setInterval(const String &name, uint32_t interval);
+  void setInterval(const String &name, uint32_t interval, bool create = false);
 
 private:
   /**
