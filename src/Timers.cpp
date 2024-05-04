@@ -44,7 +44,7 @@ void Timers::load() {
   // This is going to create the file if it doesn't exist
   File file = _fs.open(_filename, "r", true);
   if (file) {
-    StaticJsonDocument<512> doc;
+    JsonDocument doc;
     deserializeJson(doc, file);
     JsonObject obj = doc.as<JsonObject>();
     for (JsonPair p : obj) {
@@ -57,7 +57,7 @@ void Timers::load() {
 void Timers::save() {
   File file = _fs.open(_filename, FILE_WRITE);
   if (file) {
-    StaticJsonDocument<512> doc;
+    JsonDocument doc;
     JsonObject obj = doc.to<JsonObject>();
     for (auto &t : _timers) {
       obj[t.first] = t.second->getInterval();
