@@ -1,5 +1,7 @@
 # ESP32Timers
 
+[![PlatformIO Registry](https://badges.registry.platformio.org/packages/homerusja/library/ESP32Timers.svg)](https://registry.platformio.org/libraries/homerusja/ESP32Timers)
+
 ESP32Timers is a library for managing timers on ESP32. It provides classes and functions to create, manage, and check timers.
 
 ## Features
@@ -35,6 +37,39 @@ We provide two examples:
 
 - `single.cpp`: This shows the use, when you want to use only one timer. As stated above, this does not provide the saving functionality!
 - `multiple.cpp`: This shows the use of the `Timers`-class, including saving.
+
+## Installation
+
+### Depend on it
+1. Open `platformio.ini`, a project configuration file located in the root of PlatformIO project.
+2. Add the following line to the lib_deps option of [env:] section:
+
+   ```
+   homerusja/ESP32Timers@^1.0.0
+   ```
+
+3. Build a project, PlatformIO will automatically install dependencies.
+
+### Include it
+
+ESP32Timers library provides the following header files that can be included in your project:
+- ESP32Timers.h
+- TimerSingle.h
+- Timers.h
+
+```cpp
+#include <ESP32Timers.h>
+```
+
+### Command Line Interface
+
+1. Open PlatformIO Core CLI
+2. Change directory (cd) to the PlatformIO project where platformio.ini is located.
+3. Copy the following pio pkg install command and paste into the CLI shell, press Enter:
+
+   ```
+   pio pkg install --library "homerusja/ESP32Timers@^1.0.0"
+   ```
 
 ## License
 
