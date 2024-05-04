@@ -2,6 +2,11 @@
 
 namespace Timers {
 
+TimerSingle::TimerSingle(uint32_t interval) {
+  _interval = interval;
+  _nextTime = millis() + interval;
+}
+
 bool TimerSingle::isTime() {
   uint32_t now = millis();
   // This statement handles the case where the timer has wrapped around
