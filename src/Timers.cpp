@@ -37,6 +37,8 @@ void Timers::setInterval(const String &name, uint32_t interval, bool create) {
     save();
 }
 
+uint32_t Timers::getRemainingTime(const String &name) { return _timers[name]->getRemainingTime(); }
+
 void Timers::load() {
     // This is going to create the file if it doesn't exist
     File file = _fs.open(_filename, "r", true);
