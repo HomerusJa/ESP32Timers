@@ -2,5 +2,5 @@
 // Copyright © 2024, Jakob SCHLUSE
 // MIT License
 
-#include "src/Timers.h"
 #include "src/TimerSingle.h"
+#include "src/Timers.h"
