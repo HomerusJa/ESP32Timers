@@ -62,6 +62,8 @@ class Timers {
      */
     bool timerExists(const String &name) { return _timers.find(name) != _timers.end(); }
 
+    uint32_t getRemainingTime(const String &name);
+
    private:
     /**
      * @brief Loads the timers from the file system.
