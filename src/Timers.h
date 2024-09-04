@@ -66,12 +66,12 @@ class Timers {
 
     uint32_t getRemainingTime(const String &name);
 
-   private:
     /**
      * @brief Loads the timers from the file system.
      */
     void load();
 
+   private:
     /**
      * @brief Saves the timers to the file system.
      */
