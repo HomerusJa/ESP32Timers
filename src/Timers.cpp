@@ -3,7 +3,7 @@
 namespace Timers {
 Timers::Timers(fs::FS &fs, const char *filename, bool load)
     : _fs(fs), _filename(filename) {
-    if (load) load();
+    if (load) this->load();
 }
 
 Timers::~Timers() {
