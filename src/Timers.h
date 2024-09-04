@@ -21,8 +21,10 @@ class Timers {
      * of file systems are SPIFFS, SD_MMC and LittleFS.
      * @param filename The name of the file to load and save timers. This could
      * also be a path if the file system supports it.
+     * @param load If true, the timers are loaded from the file system. This
+     * crashes if the filesystem is not mounted.
      */
-    Timers(fs::FS &fs, const char *filename);
+    Timers(fs::FS &fs, const char *filename, bool load = true);
 
     /**
      * @brief Destroys the Timers object.
