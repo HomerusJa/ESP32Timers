@@ -1,0 +1,26 @@
+name: Ensure Version Update
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  version-check:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Check for version update
+      run: |
+        if git diff HEAD^ HEAD --exit-code -- library.json; then
+          echo "Version not updated in library.json"
+          exit 1
+        else
+          echo "Version updated in library.json"
+        fi
