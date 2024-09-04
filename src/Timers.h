@@ -33,8 +33,8 @@ class Timers {
 
     /**
      * @brief Adds a timer with the specified name and interval. If a timer with
-     * the same name already exists, it is not added and the old configuration is
-     * kept.
+     * the same name already exists, it is not added and the old configuration
+     * is kept.
      * @param name The name of the timer.
      * @param interval The interval in milliseconds.
      */
@@ -55,14 +55,17 @@ class Timers {
      * @param create If true, a new timer is created if there is no timer with
      * the specified name.
      */
-    void setInterval(const String &name, uint32_t interval, bool create = false);
+    void setInterval(const String &name, uint32_t interval,
+                     bool create = false);
 
     /**
      * @brief Checks if a timer with the specified name exists.
      * @param name The name of the timer.
      * @return True if a timer with the specified name exists, false otherwise.
      */
-    bool timerExists(const String &name) { return _timers.find(name) != _timers.end(); }
+    bool timerExists(const String &name) {
+        return _timers.find(name) != _timers.end();
+    }
 
     uint32_t getRemainingTime(const String &name);
 
@@ -79,6 +82,6 @@ class Timers {
 
     fs::FS &_fs; /**< The file system used for loading and saving timers. */
     std::map<String, TimerSingle *> _timers; /**< The collection of timers. */
-    const char *_filename;                   /**< The name of the file to load and save timers. */
+    const char *_filename; /**< The name of the file to load and save timers. */
 };
 }  // namespace Timers
