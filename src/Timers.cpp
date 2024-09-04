@@ -1,7 +1,8 @@
 #include "Timers.h"
 
 namespace Timers {
-Timers::Timers(fs::FS &fs, const char *filename, bool load) : _fs(fs), _filename(filename) {
+Timers::Timers(fs::FS &fs, const char *filename, bool load)
+    : _fs(fs), _filename(filename) {
     if (load) load();
 }
 
@@ -39,7 +40,9 @@ void Timers::setInterval(const String &name, uint32_t interval, bool create) {
     save();
 }
 
-uint32_t Timers::getRemainingTime(const String &name) { return _timers[name]->getRemainingTime(); }
+uint32_t Timers::getRemainingTime(const String &name) {
+    return _timers[name]->getRemainingTime();
+}
 
 void Timers::load() {
     // This is going to create the file if it doesn't exist
@@ -49,7 +52,8 @@ void Timers::load() {
         deserializeJson(doc, file);
         JsonObject obj = doc.as<JsonObject>();
         for (JsonPair p : obj) {
-            _timers[p.key().c_str()] = new TimerSingle(p.value().as<uint32_t>());
+            _timers[p.key().c_str()] =
+                new TimerSingle(p.value().as<uint32_t>());
         }
         file.close();
     }
