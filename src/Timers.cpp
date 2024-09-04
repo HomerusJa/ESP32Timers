@@ -1,7 +1,9 @@
 #include "Timers.h"
 
 namespace Timers {
-Timers::Timers(fs::FS &fs, const char *filename) : _fs(fs), _filename(filename) { load(); }
+Timers::Timers(fs::FS &fs, const char *filename, bool load) : _fs(fs), _filename(filename) {
+    if (load) load();
+}
 
 Timers::~Timers() {
     save();
