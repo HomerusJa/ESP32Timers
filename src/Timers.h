@@ -37,8 +37,9 @@ class Timers {
      * is kept.
      * @param name The name of the timer.
      * @param interval The interval in milliseconds.
+     * @param instantFire If true, the timer triggers immediately.
      */
-    void addTimer(const String &name, uint32_t interval);
+    void addTimer(const String &name, uint32_t interval, bool instantFire = false);
 
     /**
      * @brief Checks if it is time for the timer with the specified name to

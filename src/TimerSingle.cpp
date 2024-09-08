@@ -2,9 +2,14 @@
 
 namespace Timers {
 
-TimerSingle::TimerSingle(uint32_t interval) {
+TimerSingle::TimerSingle(uint32_t interval, bool instantFire) {
     _interval = interval;
-    _nextTime = millis() + interval;
+
+    if (instantFire) {
+        _nextTime = 0;
+    } else {
+        _nextTime = millis() + interval;
+    }
 }
 
 bool TimerSingle::isTime() {

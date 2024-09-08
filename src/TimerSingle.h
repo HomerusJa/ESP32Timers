@@ -24,8 +24,9 @@ class TimerSingle {
      * @brief Construct a new Timer Single object.
      *
      * @param interval The interval of the timer in milliseconds.
+     * @param instantFire Whether the timer should trigger immediately.
      */
-    TimerSingle(uint32_t interval);
+    TimerSingle(uint32_t interval, bool instantFire = false);
 
     /**
      * @brief Check if the timer has reached its interval.

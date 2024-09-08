@@ -13,12 +13,12 @@ Timers::~Timers() {
     }
 }
 
-void Timers::addTimer(const String &name, uint32_t interval) {
+void Timers::addTimer(const String &name, uint32_t interval, bool instantFire) {
     if (_timers.find(name) != _timers.end()) {
-        // Timer with the same name already exists
+        Serial.println("Timer with the same name already exists");
         return;
     }
-    _timers[name] = new TimerSingle(interval);
+    _timers[name] = new TimerSingle(interval, instantFire);
     save();
 }
 
